@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_choicesFragment_to_forceFragment"
             app:destination="@id/forceFragment" />
+        <action
+            android:id="@+id/action_choicesFragment_to_massFragment"
+            app:destination="@id/massFragment" />
     </fragment>
     <fragment
         android:id="@+id/forceFragment"
         android:name="com.example.calculator.ForceFragment"
         android:label="fragment_force"
         tools:layout="@layout/fragment_force" />
+    <fragment
+        android:id="@+id/massFragment"
+        android:name="com.example.calculator.MassFragment"
+        android:label="fragment_mass"
+        tools:layout="@layout/fragment_mass" />
 </navigation>

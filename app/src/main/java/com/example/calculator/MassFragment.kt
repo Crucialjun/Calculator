@@ -7,36 +7,36 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import kotlinx.android.synthetic.main.fragment_force.*
+import kotlinx.android.synthetic.main.fragment_mass.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class ForceFragment : Fragment() {
+class MassFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_force, container, false)
+        return inflater.inflate(R.layout.fragment_mass, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        buttonForceSubmit.setOnClickListener {
-            val mass : Int = editTextMass.text.toString().toInt()
+        buttonMassSubmit.setOnClickListener {
+            val force : Int = editTextForce.text.toString().toInt()
             val acceleration = editTextAcceleration.text.toString().toInt()
-            val force  = calculateForce(mass,acceleration)
+            val mass  = calculatemass(force,acceleration)
 
-            val formattedString = " The force exerted by a mass of  ${mass.toString()} " +
+            val formattedString = " The mass of an object with a force of   ${force.toString()} " +
                     "and an acceleration of ${acceleration.toString()} is equal to " +
-                    "${force.toString()} Newtons"
+                    "${mass.toString()} Kgs"
 
             //Add Text To Text View and make visible
-            textViewForceResult.text = formattedString
-            textViewForceResult.visibility = View.VISIBLE
+            textViewMassResult.text = formattedString
+            textViewMassResult.visibility = View.VISIBLE
 
             //Hide Keyboard
             val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -46,9 +46,8 @@ class ForceFragment : Fragment() {
 
     }
 
-    private fun calculateForce(mass: Int, acceleration: Int): Int {
-        return mass * acceleration
-    }
+    private fun calculatemass(force: Int, acceleration: Int): Int {
+        return force / acceleration
     }
 
-
+}

@@ -3,4 +3,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="please_enter_the_mass">Please Enter the Mass</string>
+    <string name="please_enter_the_acceleration">Please Enter the Acceleration</string>
+    <string name="submit">Submit</string>
+    <string name="please_enter_the_force">Please Enter The Force</string>
 </resources>

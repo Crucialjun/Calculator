@@ -27,5 +27,9 @@ class ChoicesFragment : Fragment() {
         buttonForce.setOnClickListener {
             it.findNavController().navigate(R.id.action_choicesFragment_to_forceFragment)
         }
+
+        buttonMass.setOnClickListener {
+            it.findNavController().navigate(R.id.action_choicesFragment_to_massFragment)
+        }
     }
 }

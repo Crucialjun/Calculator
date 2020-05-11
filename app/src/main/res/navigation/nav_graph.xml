@@ -16,15 +16,40 @@
         <action
             android:id="@+id/action_choicesFragment_to_massFragment"
             app:destination="@id/massFragment" />
+        <action
+            android:id="@+id/action_choicesFragment_to_accelerationFragment"
+            app:destination="@id/accelerationFragment" />
     </fragment>
     <fragment
         android:id="@+id/forceFragment"
         android:name="com.example.calculator.ForceFragment"
         android:label="fragment_force"
-        tools:layout="@layout/fragment_force" />
+        tools:layout="@layout/fragment_force" >
+        <action
+            android:id="@+id/action_forceFragment_to_doneFragment"
+            app:destination="@id/doneFragment" />
+    </fragment>
     <fragment
         android:id="@+id/massFragment"
         android:name="com.example.calculator.MassFragment"
         android:label="fragment_mass"
-        tools:layout="@layout/fragment_mass" />
+        tools:layout="@layout/fragment_mass" >
+        <action
+            android:id="@+id/action_massFragment_to_doneFragment"
+            app:destination="@id/doneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accelerationFragment"
+        android:name="com.example.calculator.AccelerationFragment"
+        android:label="fragment_acceleration"
+        tools:layout="@layout/fragment_acceleration" >
+        <action
+            android:id="@+id/action_accelerationFragment_to_doneFragment"
+            app:destination="@id/doneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doneFragment"
+        android:name="com.example.calculator.DoneFragment"
+        android:label="fragment_done"
+        tools:layout="@layout/fragment_done" />
 </navigation>

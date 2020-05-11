@@ -8,58 +8,62 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.navigation.findNavController
-import kotlinx.android.synthetic.main.fragment_mass.*
+import kotlinx.android.synthetic.main.fragment_acceleration.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class MassFragment : Fragment() {
+class AccelerationFragment : Fragment() {
 
-    var done = false
+    private var done : Boolean = false
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mass, container, false)
+        return inflater.inflate(R.layout.fragment_acceleration, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        buttonMassSubmit.setOnClickListener {
+
+
+        buttonAccelerationSubmit.setOnClickListener {
+
             if (!done) {
                 val force: Int = editTextForce.text.toString().toInt()
-                val acceleration = editTextAcceleration.text.toString().toInt()
-                val mass = calculatemass(force, acceleration)
+                val mass = editTextMass.text.toString().toInt()
+                val acceleration = calculateAcceleration(force, mass)
 
                 val formattedString =
-                    " The mass of an object with a force of   ${force.toString()} " +
-                            "and an acceleration of ${acceleration.toString()} is equal to " +
-                            "${mass.toString()} Kgs"
+                    " The Acceleration of an object with a force of   ${force.toString()} " +
+                            "and a mass of ${mass.toString()} is equal to " +
+                            "${acceleration.toString()} m/s"
 
                 //Add Text To Text View and make visible
-                textViewMassResult.text = formattedString
-                textViewMassResult.visibility = View.VISIBLE
+                textViewAccelerationResult.text = formattedString
+                textViewAccelerationResult.visibility = View.VISIBLE
 
                 //Hide Keyboard
                 val imm =
                     activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(requireView().windowToken, 0)
 
-                buttonMassSubmit.text= getString(R.string.done)
+                buttonAccelerationSubmit.text = getString(R.string.done)
                 done = true
-            } else{
-                it.findNavController().navigate(R.id.action_massFragment_to_doneFragment)
+
+            }else{
+                it.findNavController().navigate(R.id.action_accelerationFragment_to_doneFragment)
             }
         }
 
 
-
     }
 
-    private fun calculatemass(force: Int, acceleration: Int): Int {
-        return force / acceleration
+    private fun calculateAcceleration(force: Int, mass: Int): Int {
+        return force / mass
     }
 
 }

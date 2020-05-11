@@ -7,4 +7,6 @@
     <string name="please_enter_the_acceleration">Please Enter the Acceleration</string>
     <string name="submit">Submit</string>
     <string name="please_enter_the_force">Please Enter The Force</string>
+    <string name="done">Done</string>
+    <string name="thank_you_for_using_the_calculator">Thank you for using the Calculator</string>
 </resources>

@@ -31,5 +31,8 @@ class ChoicesFragment : Fragment() {
         buttonMass.setOnClickListener {
             it.findNavController().navigate(R.id.action_choicesFragment_to_massFragment)
         }
+        buttonAcceleration.setOnClickListener {
+            it.findNavController().navigate(R.id.action_choicesFragment_to_accelerationFragment)
+        }
     }
 }
